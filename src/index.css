@@ -10,3 +10,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.scrollbar_hidden::-webkit-scrollbar {
+  display: none;
+}

@@ -1,17 +1,29 @@
 import React from "react";
-import Widget from "./Widget";
-import AddWidget from "../AddWidget";
+import Widgets from "./Widgets";
+import { useSelector } from "react-redux";
 
-export default function WidgetWrapper() {
+export default function WidgetWrapper({ searchTerm }) {
+  const widgetData = useSelector((state) => state.widget);
+
+  const widgetDataToDisplay = searchTerm
+    ? Object.keys(widgetData).reduce((acc, key) => {
+        const filtered = widgetData[key].filter((widget) =>
+          widget.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        if (filtered.length) acc[key] = filtered;
+        return acc;
+      }, {})
+    : widgetData;
+
   return (
-    <div className="p-3 bg-slate-200 mt-2 rounded">
-      <h2>CSPM Executive Dashboard</h2>
-      <div className="grid grid-cols-3 gap-2 mt-2">
-        <Widget />
-        <Widget />
-        <Widget />
-        <AddWidget />
-      </div>
-    </div>
+    <section>
+      {widgetDataToDisplay &&
+        Object.keys(widgetDataToDisplay).map((wid) => (
+          <Widgets wid={wid} widgetData={widgetDataToDisplay} key={wid} />
+        ))}
+      {searchTerm && Object.keys(widgetDataToDisplay).length == 0 && (
+        <p>No Widgets to show...</p>
+      )}
+    </section>
   );
 }
