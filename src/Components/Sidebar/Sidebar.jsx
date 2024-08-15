@@ -62,7 +62,7 @@ export default function Sidebar() {
             className="hover:bg-blue-500 p-1 rounded-sm"
             onClick={closeSidebarHandler}
           >
-            <IoClose className="text-lg" />
+            <IoClose className="text-xl" />
           </button>
         </div>
 

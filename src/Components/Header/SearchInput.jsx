@@ -26,6 +26,7 @@ export default function SearchInput({ setSearchTerm }) {
       <IoSearchSharp className="text-slate-800" />
       <input
         type="text"
+        name="searchTerm"
         placeholder="search anything..."
         className="bg-transparent border-none outline-none w-full"
         value={searchText}
