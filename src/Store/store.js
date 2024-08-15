@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import widgetReducer from "./features/widgetSlice";
-import appConfigReducer from "./features/appSlice";
+import appConfigReducer from "./features/appConfigSlice";
 
 export const store = configureStore({
   reducer: {

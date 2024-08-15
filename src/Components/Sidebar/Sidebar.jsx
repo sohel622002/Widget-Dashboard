@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { closeSidebar } from "../../Store/features/appSlice";
+import { closeSidebar } from "../../Store/features/appConfigSlice";
 import { addWidget } from "../../Store/features/widgetSlice";
 import { generateRandomId } from "../../Utils/generateRandomId";
 import SidebarTabList from "./SidebarTabList";
@@ -52,7 +52,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <section
-        className={`fixed h-full top-0 right-0 bg-white max-w-[600px] w-4/5 flex flex-col transform transition-all duration-300 ${
+        className={`fixed h-full top-0 right-0 z-10 bg-white max-w-[600px] w-4/5 flex flex-col transform transition-all duration-300 ${
           appContext.isSidebarOpen ? "" : "translate-x-full"
         }`}
       >

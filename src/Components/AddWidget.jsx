@@ -2,7 +2,7 @@ import React from "react";
 import { IoAdd } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { getWidgetIndex } from "../Utils/getWidgetIndex";
-import { openSidebar, updateOpenWidgetTab } from "../Store/features/appSlice";
+import { openSidebar, updateOpenWidgetTab } from "../Store/features/appConfigSlice";
 
 export default function AddWidget({ wid }) {
   const widgetTabTitle = wid.split(" ")[0];

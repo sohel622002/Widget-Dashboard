@@ -55,7 +55,7 @@ export default memo(function SidebarTabList({ activeTab, setActiveTab }) {
           >
             {widgetData[widgetCateg].map((singleWidget) => (
               <label
-                className="flex items-center gap-2 justify-between p-2 border rounded-md cursor-pointer"
+                className="flex items-center gap-2 justify-between p-2 border rounded-md cursor-pointer text-sm sm:text-base"
                 key={singleWidget.id}
               >
                 <div className="flex items-center gap-2">
